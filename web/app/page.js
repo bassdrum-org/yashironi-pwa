@@ -8,6 +8,34 @@ export default function Home() {
   const [subscription, setSubscription] = useState(null);
 
   useEffect(() => {
+    let audioContext;
+
+    // The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page. https://goo.gl/7K7WLu
+    // この問題を解決するためAudioに実装
+    function startAudio() {
+      if (!audioContext) {
+        audioContext = new (window.AudioContext || window.webkitAudioContext)();
+      }
+      if (audioContext.state === 'suspended') {
+        audioContext.resume().then(() => {
+          console.log('Audio context resumed after user gesture.');
+        });
+      }
+    }
+
+    const startButton = document.querySelector('#startButton');
+    if (startButton) {
+      startButton.addEventListener('click', startAudio);
+    }
+
+    return () => {
+      if (startButton) {
+        startButton.removeEventListener('click', startAudio);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
     if ('serviceWorker' in navigator && 'PushManager' in window) {
       setIsSupported(true);
       registerServiceWorker();
@@ -37,6 +65,8 @@ export default function Home() {
         <p>Service Worker Not Supported</p>
       )}
 
+      <p>ボタンをクリックすると音声に関する警告が止まる</p>
+      <button id="startButton">Start Audio</button>
       <p>First Unity App</p>
       <UnityApp
         loaderUrl="./webgl1/Build/test.loader.js"
