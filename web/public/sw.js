@@ -1,15 +1,15 @@
 const STATIC_DATA = [
   '/',
   '/webgl1/Build/test.data',
-  '/webgl1/Build/test.loader',
+  '/webgl1/Build/test.loader.js',
   '/webgl1/Build/test.framework.js',
   '/webgl1/Build/test.wasm',
   '/webgl2/Build/test.data',
-  '/webgl2/Build/test.loader',
+  '/webgl2/Build/test.loader.js',
   '/webgl2/Build/test.framework.js',
   '/webgl2/Build/test.wasm',
   '/webgl3/Build/test.data',
-  '/webgl3/Build/test.loader',
+  '/webgl3/Build/test.loader.js',
   '/webgl3/Build/test.framework.js',
   '/webgl3/Build/test.wasm',
 ];
