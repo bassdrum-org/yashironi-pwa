@@ -65,8 +65,11 @@ export default function Home() {
         <p>Service Worker Not Supported</p>
       )}
 
-      <p>ボタンをクリックすると音声に関する警告が止まる</p>
-      <button id="startButton">Start Audio</button>
+      <p>櫻坂46 - 自業自得</p>
+      <video controls width="800">
+        <source src="/Sakurazaka46.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
       <p>First Unity App</p>
       <UnityApp
         loaderUrl="./webgl1/Build/test.loader.js"
