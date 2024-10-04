@@ -6,8 +6,8 @@ export default function UnityApp({
   dataUrl,
   frameworkUrl,
   codeUrl,
-  width = 800,
-  height = 600,
+  aspectRatio = 16 / 9,
+  id = "unity-app",
 }) {
   const { unityProvider } = useUnityContext({
     loaderUrl,
@@ -20,5 +20,23 @@ export default function UnityApp({
     productVersion: "1.0",
   });
 
-  return <Unity unityProvider={unityProvider} style={{ width, height }} />;
+  const containerStyle = {
+    position: "relative",
+    width: "100%",
+    paddingBottom: `${100 / aspectRatio}%`,
+  };
+
+  const unityStyle = {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    width: "100%",
+    height: "100%",
+  };
+
+  return (
+    <div style={containerStyle}>
+      <Unity unityProvider={unityProvider} id={id} style={unityStyle} />
+    </div>
+  );
 }

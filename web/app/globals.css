@@ -17,7 +17,55 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 10%;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+
+main {
+  width: 85%;
+  margin: 0 auto;
+  max-width: 1200px;
+  min-width: 320px;
+}
+
+.container {
+  margin-bottom: 100px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 40px;
+  margin-top: 30px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+p {
+  margin-bottom: 25px;
+}
+
+.service-worker {
+  text-align: center;
+  font-weight: bold;
+}
+
+.webgl, video {
+  display: block;
+  margin-bottom: 25px;
+  width: 100%;
+  max-width: 100%;
 }
 
 @layer utilities {
