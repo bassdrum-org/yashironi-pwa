@@ -1,3 +1,4 @@
+// ダウンロードしてオフラインで表示するデータはこちらに追加
 const STATIC_DATA = [
   '/',
   '/webgl1/Build/test.data',
@@ -12,9 +13,14 @@ const STATIC_DATA = [
   '/webgl3/Build/test.loader.js',
   '/webgl3/Build/test.framework.js',
   '/webgl3/Build/test.wasm',
+  'Sakurazaka46.mp4',
+  'favicon.ico',
+  'manifest.webmanifest',
+  'icons-192x192.png',
+  'icons-512x512.png',
 ];
 
-
+//　データをダウンロードする
 self.addEventListener('install', function(e) {
  e.waitUntil(
    caches.open('cache_v1').then(function(cache) {
@@ -33,6 +39,7 @@ self.addEventListener('fetch', function(event) {
  );
 });
 
+//　通知機能。使わないが万が一で保留
 self.addEventListener('push', function (event) {
     if (event.data) {
       const data = event.data.json()

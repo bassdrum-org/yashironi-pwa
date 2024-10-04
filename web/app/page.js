@@ -7,34 +7,6 @@ export default function Home() {
   const [isSupported, setIsSupported] = useState(false);
 
   useEffect(() => {
-    let audioContext;
-
-    // The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page. https://goo.gl/7K7WLu
-    // この問題を解決するためAudioに実装
-    function startAudio() {
-      if (!audioContext) {
-        audioContext = new (window.AudioContext || window.webkitAudioContext)();
-      }
-      if (audioContext.state === 'suspended') {
-        audioContext.resume().then(() => {
-          console.log('Audio context resumed after user gesture.');
-        });
-      }
-    }
-
-    const startButton = document.querySelector('#startButton');
-    if (startButton) {
-      startButton.addEventListener('click', startAudio);
-    }
-
-    return () => {
-      if (startButton) {
-        startButton.removeEventListener('click', startAudio);
-      }
-    };
-  }, []);
-
-  useEffect(() => {
     if ('serviceWorker' in navigator && 'PushManager' in window) {
       setIsSupported(true);
       registerServiceWorker();
