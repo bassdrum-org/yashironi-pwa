@@ -4,7 +4,7 @@ export default function manifest() {
       short_name: 'Yashironi',
       description: 'Yashironi',
       start_url: '/',
-      display: 'standalone',
+      display: 'fullscreen',
       background_color: '#ffffff',
       theme_color: '#000000',
       icons: [
