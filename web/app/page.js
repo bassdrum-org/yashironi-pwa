@@ -5,7 +5,6 @@ import { useEffect, useState } from 'react';
 
 export default function Home() {
   const [isSupported, setIsSupported] = useState(false);
-  const [subscription, setSubscription] = useState(null);
 
   useEffect(() => {
     let audioContext;
@@ -50,8 +49,6 @@ export default function Home() {
       });
       console.log("Service Worker Registered");
 
-      const sub = await registration.pushManager.getSubscription();
-      setSubscription(sub);
     } catch (error) {
       console.log("Service Worker Not Registered", error);
     }
