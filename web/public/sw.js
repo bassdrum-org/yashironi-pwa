@@ -20,23 +20,48 @@ const STATIC_DATA = [
   'icons-512x512.png',
 ];
 
+const CACHE_NAME = 'cache_v2';
+
 //　データをダウンロードする
 self.addEventListener('install', function(e) {
  e.waitUntil(
-   caches.open('cache_v1').then(function(cache) {
+   caches.open(CACHE_NAME).then(function(cache) {
      return cache.addAll(STATIC_DATA);
    })
  );
 });
 
-self.addEventListener('fetch', function(event) {
- console.log(event.request.url);
+// 古いキャッシュを削除
+self.addEventListener('activate', function(event) {
+  const cacheWhitelist = [CACHE_NAME];
+  event.waitUntil(
+    caches.keys().then(function(cacheNames) {
+      return Promise.all(
+        cacheNames.map(function(cacheName) {
+          if (cacheWhitelist.indexOf(cacheName) === -1) {
+            return caches.delete(cacheName);
+          }
+        })
+      );
+    })
+  );
+});
 
- event.respondWith(
-   caches.match(event.request).then(function(response) {
-     return response || fetch(event.request);
-   })
- );
+self.addEventListener('fetch', function(event) {
+  if (event.request.url.startsWith('chrome-extension://')) {
+    return;
+  }
+
+  event.respondWith(
+    fetch(event.request).then(function(networkResponse) {
+      return caches.open('cache_v1').then(function(cache) {
+        cache.put(event.request, networkResponse.clone());
+        return networkResponse;
+      });
+    }).catch(function() {
+      return caches.match(event.request);
+    })
+  );
 });
 
 //　通知機能。使わないが万が一で保留
