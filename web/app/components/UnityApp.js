@@ -8,6 +8,7 @@ export default function UnityApp({
   codeUrl,
   aspectRatio = 16 / 9,
   id = "unity-app",
+  className = "",
 }) {
   const { unityProvider } = useUnityContext({
     loaderUrl,
@@ -95,7 +96,7 @@ export default function UnityApp({
   };
 
   return (
-    <div ref={containerRef} style={containerStyle}>
+    <div ref={containerRef} className={className} style={containerStyle}>
       <Unity unityProvider={unityProvider} id={id} style={unityStyle} />
     </div>
   );

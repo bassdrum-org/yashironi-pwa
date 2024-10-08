@@ -17,7 +17,9 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  margin: 10%;
+  margin: 2em auto;
+  max-width: 900px;
+  min-width: 320px;
   padding: 0;
   font-family: Arial, sans-serif;
   box-sizing: border-box;
@@ -25,45 +27,50 @@ body {
   justify-content: center;
 }
 
-main {
-  width: 85%;
-  margin: 0 auto;
-  max-width: 1200px;
-  min-width: 320px;
-}
-
 .container {
-  margin-bottom: 100px;
+  margin-bottom: 20px;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  margin-bottom: 40px;
-  margin-top: 30px;
+h1, h3, h4 {
+  letter-spacing: -0.01em;
+  line-height: 1.2;
 }
 
 h1 {
-  text-align: center;
-  font-size: 3rem;
-  font-weight: bold;
-}
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
 
-h3 {
-  font-size: 2rem;
-  font-weight: bold;
-}
-
-p {
-  margin-bottom: 25px;
 }
 
 .service-worker {
-  text-align: center;
+  margin-bottom: 2rem;
   font-weight: bold;
 }
 
-.webgl, video {
+.title {
+  font-size: 1.875rem;
+  margin-top: 1.875rem;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+p {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.webgl, .image, video {
   display: block;
-  margin-bottom: 25px;
+  margin: 1.5em 0;
   width: 100%;
   max-width: 100%;
 }
