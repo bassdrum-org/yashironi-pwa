@@ -18,6 +18,7 @@ const STATIC_DATA = [
   'manifest.webmanifest',
   'icons-192x192.png',
   'icons-512x512.png',
+  'image.png'
 ];
 
 const CACHE_NAME = 'cache_v2';
@@ -54,10 +55,13 @@ self.addEventListener('fetch', function(event) {
 
   event.respondWith(
     fetch(event.request).then(function(networkResponse) {
-      return caches.open('cache_v1').then(function(cache) {
-        cache.put(event.request, networkResponse.clone());
-        return networkResponse;
-      });
+      if (networkResponse.status === 200) {
+        const responseClone = networkResponse.clone();
+        caches.open(CACHE_NAME).then(function(cache) {
+          cache.put(event.request, responseClone);
+        });
+      }
+      return networkResponse;
     }).catch(function() {
       return caches.match(event.request);
     })

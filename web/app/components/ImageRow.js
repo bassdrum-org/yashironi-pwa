@@ -1,18 +1,28 @@
 import Image from 'next/image';
 import styles from './ImageRow.module.css';
 
-const ImageRow = ({ src1, src2, src3 }) => {
+const ImageRow = ({ srcArray }) => {
+  let containerClass = styles.imageContainer;
+  if (srcArray.length === 1) {
+    containerClass += ` ${styles.singleImage}`;
+  } else if (srcArray.length === 2) {
+    containerClass += ` ${styles.fewImages}`;
+  }
+
   return (
-    <div className={styles.imageContainer}>
-      <div className={styles.imageWrapper}>
-        <Image src={src1} alt="Image 1" layout="responsive" width={100} height={66} />
-      </div>
-      <div className={styles.imageWrapper}>
-        <Image src={src2} alt="Image 2" layout="responsive" width={100} height={66} />
-      </div>
-      <div className={styles.imageWrapper}>
-        <Image src={src3} alt="Image 3" layout="responsive" width={100} height={66} />
-      </div>
+    <div className={containerClass}>
+      {srcArray.map((src, index) => (
+        <div key={index} className={styles.imageWrapper}>
+          <Image 
+            src={src} 
+            alt={`Image ${index + 1}`} 
+            width={100} 
+            height={66} 
+            priority={index === 0}
+            style={{ width: '100%', height: 'auto' }} 
+          />
+        </div>
+      ))}
     </div>
   );
 };
