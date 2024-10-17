@@ -56,7 +56,14 @@ export default function Home() {
           <p>着物では生地の凹凸のことを「シボ」と呼びます。着物を御召しになる方だと、一度は聞いたことがある言葉なのではないでしょうか。では、そもそも生地にシボがあると何がいいのでしょう。</p>
           <p>凹凸が少ない生地は、肌と接する点が少なく、そこに強い力がかかってしまいます。シボがあることで肌との接地点が少なくなり、適度な快適さが生み出されるのです。ただし、シボが多すぎてもダメです。接地点が多すぎると、大きな摩擦が発生してしまい、肌離れが悪い生地になってしまうのです。</p>
           <p>以上の仮説を検証するために、生地の凹凸を増減させると肌との接地点がどのように変化するかをシュミレーションできるモデルをつくりました。このモデルが、シボと着心地を考えるうえでの出発点になると思います。</p>
-          <ImageRow srcArray={['/image1.png']} />         
+          <UnityApp
+            loaderUrl="./webgl1/Build/test.loader.js"
+            dataUrl="./webgl1/Build/test.data"
+            frameworkUrl="./webgl1/Build/test.framework.js"
+            codeUrl="./webgl1/Build/test.wasm"
+            className="webgl"
+            id="unity-app-1"
+          />
         </div>
 
         <div className="container">
@@ -91,10 +98,10 @@ export default function Home() {
             <li>「裾捌きがよい」を検証するモデル</li>
           </ul>
           <UnityApp
-              loaderUrl="./webgl1/Build/test.loader.js"
-              dataUrl="./webgl1/Build/test.data"
-              frameworkUrl="./webgl1/Build/test.framework.js"
-              codeUrl="./webgl1/Build/test.wasm"
+              loaderUrl="./webgl1/Build/01_v2.1_webgl.loader.js"
+              dataUrl="./webgl1/Build/01_v2.1_webgl.data"
+              frameworkUrl="./webgl1/Build/01_v2.1_webgl.framework.js"
+              codeUrl="./webgl1/Build/01_v2.1_webgl.wasm"
               className="webgl"
               id="unity-app-1"
             />
