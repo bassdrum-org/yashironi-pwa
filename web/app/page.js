@@ -72,7 +72,14 @@ export default function Home() {
           <p>御召は単衣で仕立てることで、暑い時期にも対応できる着物です（盛夏に野外が多い着装シーンには「駒御召」と呼ばれる別の織物をオススメしています）。その理由は凹凸によって生まれる風通しのよさにあるのではないかと考えています。</p>
           <p>生地に凹凸ができることによって、まるで生地の表面には高低差が生まれます。仮説1で検証したように肌との設置点も多いため、まるで山と谷の間を風が吹き抜けるように空気の流れが生まれる余地が存在するわけです。</p>
           <p>以下は、御召のような凹凸のある生地で、いかに空気が流れるかを示したモデルです。</p>
-          <ImageRow srcArray={['/image2.png']} />
+          <UnityApp
+            loaderUrl="./webgl2/Build/02_v2.loader.js"
+            dataUrl="./webgl2/Build/02_v2.data"
+            frameworkUrl="./webgl2/Build/02_v2.framework.js"
+            codeUrl="./webgl2/Build/02_v2.wasm"
+            className="webgl"
+            id="unity-app-2"
+          />
         </div>
 
         <div className="container">
@@ -97,14 +104,6 @@ export default function Home() {
           <ul>
             <li>「裾捌きがよい」を検証するモデル</li>
           </ul>
-          <UnityApp
-              loaderUrl="./webgl1/Build/01_v2.1_webgl.loader.js"
-              dataUrl="./webgl1/Build/01_v2.1_webgl.data"
-              frameworkUrl="./webgl1/Build/01_v2.1_webgl.framework.js"
-              codeUrl="./webgl1/Build/01_v2.1_webgl.wasm"
-              className="webgl"
-              id="unity-app-1"
-            />
         </div>
 
         <div className="container">
