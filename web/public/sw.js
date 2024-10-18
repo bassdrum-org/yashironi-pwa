@@ -1,27 +1,26 @@
 // ダウンロードしてオフラインで表示するデータはこちらに追加
 const STATIC_DATA = [
   '/',
-  '/webgl1/Build/test.data',
-  '/webgl1/Build/test.loader.js',
-  '/webgl1/Build/test.framework.js',
-  '/webgl1/Build/test.wasm',
-  '/webgl2/Build/test.data',
-  '/webgl2/Build/test.loader.js',
-  '/webgl2/Build/test.framework.js',
-  '/webgl2/Build/test.wasm',
+  '/webgl1/Build/01_v2.1_webgl.data',
+  '/webgl1/Build/01_v2.1_webgl.loader.js',
+  '/webgl1/Build/01_v2.1_webgl.framework.js',
+  '/webgl1/Build/01_v2.1_webgl.wasm',
+  '/webgl2/Build/02_v2.data',
+  '/webgl2/Build/02_v2.loader.js',
+  '/webgl2/Build/02_v2.framework.js',
+  '/webgl2/Build/02_v2.wasm',
   '/webgl3/Build/test.data',
   '/webgl3/Build/test.loader.js',
   '/webgl3/Build/test.framework.js',
   '/webgl3/Build/test.wasm',
-  'Sakurazaka46.mp4',
   'favicon.ico',
   'manifest.webmanifest',
   'icons-192x192.png',
   'icons-512x512.png',
-  'image.png'
+  'image.png',
 ];
 
-const CACHE_NAME = 'cache_v2';
+const CACHE_NAME = 'cache_v3';
 
 //　データをダウンロードする
 self.addEventListener('install', function(e) {
