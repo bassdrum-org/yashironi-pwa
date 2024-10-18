@@ -73,10 +73,10 @@ export default function Home() {
           <p>生地に凹凸ができることによって、まるで生地の表面には高低差が生まれます。仮説1で検証したように肌との設置点も多いため、まるで山と谷の間を風が吹き抜けるように空気の流れが生まれる余地が存在するわけです。</p>
           <p>以下は、御召のような凹凸のある生地で、いかに空気が流れるかを示したモデルです。</p>
           <UnityApp
-            loaderUrl="./webgl2/Build/02_V2.1.loader.js"
-            dataUrl="./webgl2/Build/02_V2.1.data"
-            frameworkUrl="./webgl2/Build/02_V2.1.framework.js"
-            codeUrl="./webgl2/Build/02_V2.1.wasm"
+            loaderUrl="./webgl2/Build/02_v2.8_webgpu.loader.js"
+            dataUrl="./webgl2/Build/02_v2.8_webgpu.data"
+            frameworkUrl="./webgl2/Build/02_v2.8_webgpu.framework.js"
+            codeUrl="./webgl2/Build/02_v2.8_webgpu.wasm"
             className="webgl"
             id="unity-app-2"
           />

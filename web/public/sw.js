@@ -5,10 +5,10 @@ const STATIC_DATA = [
   '/webgl1/Build/01_v2.1_webgl.loader.js',
   '/webgl1/Build/01_v2.1_webgl.framework.js',
   '/webgl1/Build/01_v2.1_webgl.wasm',
-  '/webgl2/Build/02_V2.1.data',
-  '/webgl2/Build/02_V2.1.loader.js',
-  '/webgl2/Build/02_V2.1.framework.js',
-  '/webgl2/Build/02_V2.1.wasm',
+  '/webgl2/Build/02_v2.8_webgpu.data',
+  '/webgl2/Build/02_v2.8_webgpu.loader.js',
+  '/webgl2/Build/02_v2.8_webgpu.framework.js',
+  '/webgl2/Build/02_v2.8_webgpu.wasm',
   '/webgl3/Build/test.data',
   '/webgl3/Build/test.loader.js',
   '/webgl3/Build/test.framework.js',
@@ -20,7 +20,7 @@ const STATIC_DATA = [
   'image.png',
 ];
 
-const CACHE_NAME = 'cache_v4';
+const CACHE_NAME = 'cache_v5';
 
 //　データをダウンロードする
 self.addEventListener('install', function(e) {
