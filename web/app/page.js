@@ -56,7 +56,14 @@ export default function Home() {
           <p>着物では生地の凹凸のことを「シボ」と呼びます。着物を御召しになる方だと、一度は聞いたことがある言葉なのではないでしょうか。では、そもそも生地にシボがあると何がいいのでしょう。</p>
           <p>凹凸が少ない生地は、肌と接する点が少なく、そこに強い力がかかってしまいます。シボがあることで肌との接地点が少なくなり、適度な快適さが生み出されるのです。ただし、シボが多すぎてもダメです。接地点が多すぎると、大きな摩擦が発生してしまい、肌離れが悪い生地になってしまうのです。</p>
           <p>以上の仮説を検証するために、生地の凹凸を増減させると肌との接地点がどのように変化するかをシュミレーションできるモデルをつくりました。このモデルが、シボと着心地を考えるうえでの出発点になると思います。</p>
-          <ImageRow srcArray={['/image1.png']} />         
+          <UnityApp
+            loaderUrl="./webgl1/Build/test.loader.js"
+            dataUrl="./webgl1/Build/test.data"
+            frameworkUrl="./webgl1/Build/test.framework.js"
+            codeUrl="./webgl1/Build/test.wasm"
+            className="webgl"
+            id="unity-app-1"
+          />
         </div>
 
         <div className="container">
@@ -65,7 +72,14 @@ export default function Home() {
           <p>御召は単衣で仕立てることで、暑い時期にも対応できる着物です（盛夏に野外が多い着装シーンには「駒御召」と呼ばれる別の織物をオススメしています）。その理由は凹凸によって生まれる風通しのよさにあるのではないかと考えています。</p>
           <p>生地に凹凸ができることによって、まるで生地の表面には高低差が生まれます。仮説1で検証したように肌との設置点も多いため、まるで山と谷の間を風が吹き抜けるように空気の流れが生まれる余地が存在するわけです。</p>
           <p>以下は、御召のような凹凸のある生地で、いかに空気が流れるかを示したモデルです。</p>
-          <ImageRow srcArray={['/image2.png']} />
+          <UnityApp
+            loaderUrl="./webgl2/Build/02_v2.loader.js"
+            dataUrl="./webgl2/Build/02_v2.data"
+            frameworkUrl="./webgl2/Build/02_v2.framework.js"
+            codeUrl="./webgl2/Build/02_v2.wasm"
+            className="webgl"
+            id="unity-app-2"
+          />
         </div>
 
         <div className="container">
@@ -90,14 +104,6 @@ export default function Home() {
           <ul>
             <li>「裾捌きがよい」を検証するモデル</li>
           </ul>
-          <UnityApp
-              loaderUrl="./webgl1/Build/test.loader.js"
-              dataUrl="./webgl1/Build/test.data"
-              frameworkUrl="./webgl1/Build/test.framework.js"
-              codeUrl="./webgl1/Build/test.wasm"
-              className="webgl"
-              id="unity-app-1"
-            />
         </div>
 
         <div className="container">
