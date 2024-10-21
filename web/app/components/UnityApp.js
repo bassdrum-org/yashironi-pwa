@@ -6,7 +6,7 @@ export default function UnityApp({
   dataUrl,
   frameworkUrl,
   codeUrl,
-  aspectRatio = 16 / 9,
+  aspectRatio = 4 / 3,
   id = "unity-app",
   className = "",
 }) {
@@ -37,7 +37,7 @@ export default function UnityApp({
     const winHeight = window.innerHeight;
     const winWidth = window.innerWidth;
     const appWidth = 1920; 
-    const appHeight = 1080; 
+    const appHeight = 1440; 
     const scale = Math.min(winWidth / appWidth, winHeight / appHeight);
     const fixWidth = appWidth * scale;
     const fixHeight = appHeight * scale;
