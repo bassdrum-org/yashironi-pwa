@@ -18,6 +18,7 @@ const STATIC_DATA = [
   'icons-192x192.png',
   'icons-512x512.png',
   'image.png',
+  '03_WrinkleSim.gif'
 ];
 
 const CACHE_NAME = 'cache_v5';
