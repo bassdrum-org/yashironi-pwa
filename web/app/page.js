@@ -6,6 +6,37 @@ import { useEffect, useState } from 'react';
 
 export default function Home() {
   const [isSupported, setIsSupported] = useState(false);
+  const [fontSize, setFontSize] = useState(16);
+  const [uiVisible, setUiVisible] = useState(false);
+  const [clickCount, setClickCount] = useState(0);
+
+  // 1秒内5回をクリックすると、UIを開く、または閉じる
+  useEffect(() => {
+    if (clickCount === 5) {
+      toggleUI();
+      setClickCount(0);
+    }
+
+    if (clickCount > 0) {
+      const timer = setTimeout(() => setClickCount(0), 1000);
+      return () => clearTimeout(timer);
+    }
+  }, [clickCount]);
+
+
+  const handleFontSizeChange = (action) => {
+    let newSize = fontSize;
+    if (action === 'increase' && fontSize < 40) { 
+      newSize = fontSize + 2;
+    } else if (action === 'decrease' && fontSize > 4) { 
+      newSize = fontSize - 2;
+    }
+    setFontSize(newSize);
+  };
+
+  const toggleUI = () => {
+    setUiVisible(!uiVisible);
+  };
 
   useEffect(() => {
     if ('serviceWorker' in navigator && 'PushManager' in window) {
@@ -29,6 +60,30 @@ export default function Home() {
 
   return (
     <div>
+      <div
+          className="click-zone"
+          onClick={() => setClickCount(clickCount + 1)}
+      ></div>
+
+      <div className="font-selector">
+          {uiVisible && (
+            <div className="font-controls">
+              <div className="control-buttons">
+                <button onClick={() => handleFontSizeChange('decrease')} className="toggle-btn">-</button>
+                <button onClick={() => handleFontSizeChange('increase')} className="toggle-btn">+</button>
+              </div>
+              <div className="font-indicator">
+                <p>font size: {fontSize}px</p>
+              </div>
+              <div>
+                <button onClick={toggleUI} className="toggle-btn">
+                  Close Font Controls
+                </button>
+              </div>
+            </div>
+          )}
+      </div>
+
       <div className="header">
         <h1>矢代仁の御召の「着やすさ」を解剖！</h1>
         <hr className="horizon-line"/>
