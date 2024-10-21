@@ -1,14 +1,14 @@
 // ダウンロードしてオフラインで表示するデータはこちらに追加
 const STATIC_DATA = [
   '/',
-  '/webgl1/Build/01_v2.1_webgl.data',
-  '/webgl1/Build/01_v2.1_webgl.loader.js',
-  '/webgl1/Build/01_v2.1_webgl.framework.js',
-  '/webgl1/Build/01_v2.1_webgl.wasm',
-  '/webgl2/Build/02_v2.8_webgpu.data',
-  '/webgl2/Build/02_v2.8_webgpu.loader.js',
-  '/webgl2/Build/02_v2.8_webgpu.framework.js',
-  '/webgl2/Build/02_v2.8_webgpu.wasm',
+  '/webgl1/Build/01_v3.0_webgl.data',
+  '/webgl1/Build/01_v3.0_webgl.loader.js',
+  '/webgl1/Build/01_v3.0_webgl.framework.js',
+  '/webgl1/Build/01_v3.0_webgl.wasm',
+  '/webgl2/Build/02_v3.0_webgpu.data',
+  '/webgl2/Build/02_v3.0_webgpu.loader.js',
+  '/webgl2/Build/02_v3.0_webgpu.framework.js',
+  '/webgl2/Build/02_v3.0_webgpu.wasm',
   '/webgl3/Build/test.data',
   '/webgl3/Build/test.loader.js',
   '/webgl3/Build/test.framework.js',
@@ -21,7 +21,7 @@ const STATIC_DATA = [
   '03_WrinkleSim.gif'
 ];
 
-const CACHE_NAME = 'cache_v5';
+const CACHE_NAME = 'cache_v6';
 
 //　データをダウンロードする
 self.addEventListener('install', function(e) {
