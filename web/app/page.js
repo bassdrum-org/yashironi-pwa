@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 
 export default function Home() {
   const [isSupported, setIsSupported] = useState(false);
-  const [fontSize, setFontSize] = useState(16);
+  const [fontSize, setFontSize] = useState(18);
   const [uiVisible, setUiVisible] = useState(false);
   const [clickCount, setClickCount] = useState(0);
 
@@ -86,7 +86,6 @@ export default function Home() {
 
       <div className="header">
         <h1>矢代仁の御召の「着やすさ」を解剖！</h1>
-        <hr className="horizon-line"/>
         {isSupported ? (
           <p className="service-worker">［きものサローネ 2024に向けた機能性検証プロトタイプ］</p>
         ) : (
@@ -96,8 +95,7 @@ export default function Home() {
 
       <div className="body">
         <div className="container">
-          <h1 className="title">仮説からはじめる：機能性を検証するために</h1>
-          <hr className="horizon-line"/>
+          <h2 className="title">仮説からはじめる：機能性を検証するために</h2>
           <p>「御召には、最先端の繊維にも負けない機能性があるのではないか？」</p>
           <p>そんな仮説を出発点に、矢代仁は300年つづく企業としての起源である「御召」の機能性をめぐるリサーチを進めています。「御召」という織物は、もともと徳川11代将軍である家斉が好んできた下着にルーツがあるとされています。御召緯（おめしぬき）とよばれる強い撚りがかかった糸を使っているため、表面に細かい凹凸があり、非常に手触りがよいのが特徴です。</p>
           <p>現代人の感覚でいえば、着物は重たい、着づらいといった印象がどうしてもぬぐえません。ただ、平安時代には貴族が着ていた十二単（じゅうにひとえ）と呼ばれる非常に複雑な様式と比較すると、1500年近い歴史のなかで時代の変化に合わせて進化してきたのが、現代まで残る着物であるというのもまた事実です。着物という文化のなかには、先人たちがいかに快適に暮らせるか？という思いのなかで培ってきた技術が残されているはずです。</p>
@@ -106,8 +104,7 @@ export default function Home() {
         </div>
 
         <div className="container">
-          <h1 className="title">仮説1）サラサラ：適度な凹凸が生みだす快適さ</h1>
-          <hr className="horizon-line"/>
+          <h2 className="title">仮説1）サラサラ：適度な凹凸が生みだす快適さ</h2>
           <p>着物では生地の凹凸のことを「シボ」と呼びます。着物を御召しになる方だと、一度は聞いたことがある言葉なのではないでしょうか。では、そもそも生地にシボがあると何がいいのでしょう。</p>
           <p>凹凸が少ない生地は、肌と接する点が少なく、そこに強い力がかかってしまいます。シボがあることで肌との接地点が少なくなり、適度な快適さが生み出されるのです。ただし、シボが多すぎてもダメです。接地点が多すぎると、大きな摩擦が発生してしまい、肌離れが悪い生地になってしまうのです。</p>
           <p>以上の仮説を検証するために、生地の凹凸を増減させると肌との接地点がどのように変化するかをシュミレーションできるモデルをつくりました。このモデルが、シボと着心地を考えるうえでの出発点になると思います。</p>
@@ -148,7 +145,7 @@ export default function Home() {
         </div>
 
         <div className="container">
-          <h3 className="title">「着やすさ」を解剖していく：今後の展望</h3>
+          <h2 className="title">「着やすさ」を解剖していく：今後の展望</h2>
           <p>以上は、2023年から続けてきたリサーチの到達点に過ぎません。これで300年つづいてきた御召の「機能性」を解明できたわけではありません。今後も実際の御召からのデータ取得など、検証を進めていきます。</p>
           <p>また今回のリサーチは、改めて「着やすさ」について考え直すきっかけとなりました。「着やすさ」とは、生地がもつ特性が絡み合うことによって実現されます。また、「着崩れしにくい」「裾捌きがよい」など、着物に固有の着やすさを成立させる要素も存在します。以下にまだ検証中のモデルの一部も公開させていただきます。</p>
           <p>今後も検証を進めた結果をお伝えしながら、御召という織物をみなさまにお届けできればと考えております。2025年10月にも「YSN：ゆっくりしっかりのこす」の展示を京都で開催し、今回のような科学的検証の一部を体感していただく予定です。</p>
@@ -162,12 +159,14 @@ export default function Home() {
         </div>
 
         <div className="container">
-          <h3 className="title">制作クレジット</h3>
-          <p>監修：須田伸一、矢代真也（矢代仁）</p>
-          <p>テクニカルディレクション：BASSDRUM（池田航成、小川恭平、森岡東洋志）</p>
-          <p>ビジュアライゼーション：小川恭平（BASSDRUM）</p>
-          <p>アプリケーション構築：張釗（BASSDRUM）</p>
-          <p>執筆：矢代真也（矢代仁）</p>
+          <h2 className="title">制作クレジット</h2>
+          <p>
+              監修：須田伸一、矢代真也（矢代仁）<br />
+              テクニカルディレクション：BASSDRUM（池田航成、小川恭平、森岡東洋志）<br />
+              ビジュアライゼーション：小川恭平（BASSDRUM）<br />
+              アプリケーション構築：張釗（BASSDRUM）<br />
+              執筆：矢代真也（矢代仁）
+          </p>
         </div>
         
         {/* <div className="container">
