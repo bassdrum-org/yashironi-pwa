@@ -17,7 +17,6 @@ const STATIC_DATA = [
   'manifest.webmanifest',
   'icons-192x192.png',
   'icons-512x512.png',
-  'image.png',
   '03_WrinkleSim.gif'
 ];
 
